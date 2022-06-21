@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment # Kubernetes resource kind we are creating
+metadata:
+  name: ibm-cloud-demo
+spec:
+  selector:
+    matchLabels:
+      app: ibm-cloud-demo
+  replicas: 1 # Number of replicas that will be created for this deployment
+  template:
+    metadata:
+      labels:
+        app: ibm-cloud-demo
+    spec:
+      containers:
+        - name: ibm-cloud-demo
+          image: ibm-cloud-demo
+          # Image that will be used to containers in the cluster
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+# The port that the container is running on in the cluster
