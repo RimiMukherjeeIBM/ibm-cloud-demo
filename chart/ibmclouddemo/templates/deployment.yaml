@@ -37,7 +37,7 @@ spec:
   {{ else }}
           readinessProbe:
             httpGet:
-              path: /health
+              path: /actuator/health
               port: 8080
               scheme: HTTP
             initialDelaySeconds: 20
