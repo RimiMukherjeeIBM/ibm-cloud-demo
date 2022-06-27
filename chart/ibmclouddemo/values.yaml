@@ -90,3 +90,15 @@ base:
 services:
   cloudant:
     secretKeyRef: binding-demo-ue-cloudant-sb
+hpa:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 2
+  metrics:
+    cpu:
+      targetAverageUtilization: 70
+    memory:
+      targetAverageUtilization: 70
+istio:
+  enabled: false
+  weight: 100
