@@ -87,3 +87,6 @@ base:
   image:
     tag : v0.9.9
   weight: 100
+services:
+  cloudant:
+    secretKeyRef: binding-demo-ue-cloudant-sb
